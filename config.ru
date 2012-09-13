@@ -1,8 +1,13 @@
 require 'bundler/setup'
 require 'sinatra/base'
+require 'rack-rewrite'
 
 # The project root directory
 $root = ::File.dirname(__FILE__)
+
+use Rack::Rewrite do
+  r301 %r{^/blog/2011/12/the-helimin/?$}, '/blog/2011/12/06/the-helimin/'
+end
 
 class SinatraStaticServer < Sinatra::Base  
 
