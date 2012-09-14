@@ -18,6 +18,7 @@ date: 2012-09-12 20:11
 	<style>
 		* { padding: 0; margin: 0; }
 		* { color: #fff; font-family: Helvetica, Arial; font-size: 15px; line-height: 24px; margin-bottom: 22px; -webkit-font-smoothing: antialiased; }
+        h2 {font-size:1.2em}
         ul li {list-style: none;}
 		a { color: #fff; font-weight: bold; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
         ul li a {font-weight: normal}
@@ -52,8 +53,9 @@ date: 2012-09-12 20:11
 <div id="bloglist">
     <h2>Recent blog posts</h2>
     <ul>
+        {% assign page = '' %}
         {% for post in paginator.posts %}
-        <li><a href="{{post.url}}">{{post.title}}</a> <br>{% include post/date.html %}{{time}}</li>
+        <li><a href="{{post.url}}">{{post.title}}</a> <br>{% include post/date.html %}{{date_formatted}}</li>
         {% endfor %}
     </ul>
 
