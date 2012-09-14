@@ -3,7 +3,7 @@ layout: post
 title: "The Helimin (or how to threshold based on hue in OpenCV)"
 date: 2011-12-06 19:31
 comments: true
-categories: 
+categories: [Hackdays, openFrameworks, Computer Vision] 
 ---
 {% img left /images/content/helimin.jpg 'The Helimin' 'No this is not stock photography' %}
 

@@ -13,15 +13,18 @@ date: 2012-09-12 20:11
 	<meta name="MSSmartTagsPreventParsing" content="true" />
 	<meta http-equiv="imagetoolbar" content="false" />	
     <link href="/roderickhodgson.atom" rel="alternate" title="atom" type="application/atom+xml" />
-    <meta name="description" content="Roderick is a R&D Engineer at BBC R&D in London interested in Computer Vision, Machine Learning and the biological and psychological processes associated with media consumption" />
+    <meta name="description" content="Roderick is a R&D Engineer at BBC R&D in London interested in Computer Vision, Machine Learning and the biological and psychological processes associated with audio-visual experiences" />
     
 	<style>
 		* { padding: 0; margin: 0; }
-		p { color: #fff; font-family: Helvetica, Arial; font-size: 15px; line-height: 24px; margin-bottom: 22px; -webkit-font-smoothing: antialiased; }
+		* { color: #fff; font-family: Helvetica, Arial; font-size: 15px; line-height: 24px; margin-bottom: 22px; -webkit-font-smoothing: antialiased; }
+        ul li {list-style: none;}
 		a { color: #fff; font-weight: bold; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); }
-		a:hover { color: #364D2F; border-bottom: 1px solid rgba(255,255,255,1); }
+        ul li a {font-weight: normal}
+		a:hover { color: #DDD; border-bottom: 1px solid rgba(255,255,255,1); }
 		#monogram { width: 50px; padding: 50px 0 0 0; margin: 0 auto 0 50px; }
-		#about { width: 360px; padding: 10px 10px 0 10px; margin: -65px 50px 0 auto !important;background: rgba(18, 19, 21, 0.7);  }
+		#bloglist { width: 220px; padding: 10px 10px 0 10px; margin: 50px auto 0 50px;background: rgba(18, 19, 21, 0.7); float:left }
+		#about { width: 360px; padding: 10px 10px 0 10px; margin: -65px 50px 0 auto !important;background: rgba(18, 19, 21, 0.7); float:right }
 		#copy { width: 360px; padding: 10px 10px 0 10px; margin: 25px 50px 0 auto !important;background: rgba(18, 19, 21, 0.7);  }
 	</style>
 	<script type="text/javascript">
@@ -46,6 +49,15 @@ date: 2012-09-12 20:11
 	<img src="logo.png" />
 </div>
 
+<div id="bloglist">
+    <h2>Recent blog posts</h2>
+    <ul>
+        {% for post in paginator.posts %}
+        <li><a href="{{post.url}}">{{post.title}}</a> <br>{% include post/date.html %}{{time}}</li>
+        {% endfor %}
+    </ul>
+
+</div>
 <!-- swap out for information about yourself -->
 <div id="about" xmlns:v="http://rdf.data-vocabulary.org/#" typeof="v:Person">
     <p>Hello. I am <span property="v:name">Roderick</span>. I am a <span property="v:title">Research &amp; Development Engineer</span> at <a href="http://www.bbc.co.uk/rd/about/roderick_hodgson.shtml" property="v:affiliation">BBC R&amp;D</a> in <span rel="v:address"><span typeof="v:Address"><span property="v:region">London</span></span></span>. During the day I invent newfangled telly-related things with information retrieval and computer vision. Once the sun has set, I works on all manner of side projects: Web weekend projects like <a href="http://altfilm.co.uk">altfilm</a> or <a href="http://visafree.co.uk">Visa Free</a>, carpentry projects like building a bar, hacking around with some <a href="https://github.com/roderickhodgson/ofxKinect">Kinects</a>, writing an iPhone game, making some <a href="http://www.bbc.co.uk/blogs/researchanddevelopment/2010/09/anti-design-festival-up-runnin.shtml">art installations</a>. </p>
